@@ -1,9 +1,11 @@
 // require necessary NPM packages
+// [v]
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
 // require route files
+const habitRoutes = require('./app/routes/habit_routes')
 const exampleRoutes = require('./app/routes/example_routes')
 const userRoutes = require('./app/routes/user_routes')
 
@@ -33,6 +35,7 @@ mongoose.connect(db, {
 })
 
 // instantiate express application object
+// [v]
 const app = express()
 
 // set CORS headers on response from this API using the `cors` NPM package
@@ -62,6 +65,7 @@ app.use(requestLogger)
 
 // register route files
 app.use(exampleRoutes)
+app.use(habitRoutes)
 app.use(userRoutes)
 
 // register error handling middleware
@@ -72,6 +76,7 @@ app.use(errorHandler)
 // run API on designated port (4741 in this case)
 app.listen(port, () => {
   console.log('listening on port ' + port)
+  // console.log(habitRoutes)
 })
 
 // needed for testing
