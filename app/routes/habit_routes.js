@@ -21,7 +21,7 @@ const router = express.Router()
 
 // INDEX
 // ?? why toObject then to .json? watch video. 
-router.get('/habits', requireToken, (req, res, next) => {
+router.get('/habits', (req, res, next) => {
   Habit.find()
     // .then(handle404)
     .then(habits => {
