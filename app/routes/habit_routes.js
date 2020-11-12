@@ -17,12 +17,10 @@ const requireToken = passport.authenticate('bearer', {
 
 const router = express.Router()
 
-
-
 // INDEX
-// ?? why toObject then to .json? watch video. 
-router.get('/habits', (req, res, next) => {
-  Habit.find()
+// ?? why toObject then to .json? watch video.
+router.get('/habits', requireToken, (req, res, next) => {
+  Habit.find({ owner: req.user.id })
     // .then(handle404)
     .then(habits => {
       return habits.map(habit => habit.toObject())
