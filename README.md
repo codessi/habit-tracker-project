@@ -41,4 +41,4 @@ Mongo DB RESTful API was used to supply and save users' resources through connec
 
 
 #### ERD:
-![ERD](https://media.git.generalassemb.ly/user/31535/files/3b5c7500-1f28-11eb-9856-bfdeaf4a65c0)
+![ERD](https://media.git.generalassemb.ly/user/31535/files/3b5c7500-1f28-11eb-9856-bfdeaf4a65c0) 
